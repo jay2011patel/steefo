@@ -77,7 +77,7 @@ import '../Models/user.dart';
 //           //         decoration: BoxDecoration(
 //           //             color: Colors.green,
 //           //             borderRadius: BorderRadius.circular(20)),
-//           //         child: Text("Purchase"));
+//           //        child: Text("Purchase"));
 //           //   }
 //           // })
 //           Divider(
@@ -131,8 +131,9 @@ import '../Models/user.dart';
 //     return Container();
 // }
 Widget orderCard(BuildContext context, Order order, String? curr_user_id) {
-  if (order.status != 'Pending') {
-    return Card(
+  if (order.status == 'Confirmed') {
+    return
+      Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       color: Colors.white,
       elevation: 5,
@@ -303,15 +304,15 @@ Widget orderCard(BuildContext context, Order order, String? curr_user_id) {
                       // color: Color.fromRGBO(19, 59, 78, 1.0),
                       color: Colors.grey),
                 ),
-                Container(
-                  padding: EdgeInsets.only(left: 20),
-                  height: 30,
-                  child: VerticalDivider(
-                    color: Colors.grey,
-                    thickness: 2,
-                    width: 2,
-                  ),
-                ),
+                // Container(
+                //   padding: EdgeInsets.only(left: 20),
+                //   height: 30,
+                //   child: VerticalDivider(
+                //     color: Colors.grey,
+                //     thickness: 2,
+                //     width: 2,
+                //   ),
+                // ),
                 // Container(
                 //   child: Text(
                 //       item.price!

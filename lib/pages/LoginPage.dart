@@ -165,7 +165,6 @@ class _loginPageState extends State<LoginContent> {
                       //--------------------------StartOfChildren---------------------------
 
                       Column(children: [
-
                     SizedBox(
                       height: MediaQuery.of(context).size.height / 30,
                     ),

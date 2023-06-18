@@ -6,6 +6,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:stefomobileapp/Models/order.dart';
 import 'package:stefomobileapp/pages/DistBuyerspage.dart';
 import 'package:stefomobileapp/pages/EditableProfilePage.dart';
 import 'package:stefomobileapp/pages/ForgetPassPage.dart';
@@ -19,6 +20,7 @@ import 'package:stefomobileapp/pages/RegistrationPage.dart';
 import 'package:stefomobileapp/pages/RequestPage.dart';
 import 'package:stefomobileapp/pages/PlaceOrderPage.dart';
 import 'package:stefomobileapp/pages/UserProfilePage.dart';
+import 'package:stefomobileapp/pages/addItem.dart';
 
 import 'package:stefomobileapp/pages/newPassPage.dart';
 import 'pages/LRPage.dart';
@@ -53,7 +55,7 @@ class MyApp extends StatelessWidget {
         '/orderreq': (BuildContext context) => RequestPage(),
         //'/challanlist': (BuildContext context) => ChallanListPage(),
         '/placeorder': (BuildContext context) => PlaceOrderPage(),
-        '/orders': (BuildContext context) => OrdersPage(),
+        '/orders': (BuildContext context) => OrdersPage(order: Order(),),
         //'/gnchallan': (BuildContext context) => GenerateChallanPage(),
         //'/order': (BuildContext context) => OrderDetails(),
         // '/challan': (BuildContext context) => GeneratedChallan(),
@@ -63,6 +65,7 @@ class MyApp extends StatelessWidget {
         '/OTP': (BuildContext context) => OTPPage(),
         '/newPass': (BuildContext context) => NewPassPage(),
         '/profilePage': (BuildContext context) => ProfilePage(),
+        '/AddItem': (BuildContext context) => AddItemPage(),
 
         //'/request': (BuildContext context) => UserRequestPage(),
       },

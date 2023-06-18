@@ -139,12 +139,13 @@ class _InventoryPageState extends State<InventoryContent> {
             } else {
               return Center(
                   child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  CircularProgressIndicator(color: Colors.grey),
-                  Text("Loading Inventory")
-                ],
-              ));
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      CircularProgressIndicator(color: Colors.grey),
+                      Text("Loading Inventory")
+                    ],
+                )
+              );
             }
           }),
           bottomNavigationBar: StylishBottomBar(

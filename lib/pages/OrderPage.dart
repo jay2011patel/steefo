@@ -107,7 +107,6 @@ class _OrderPageState extends State<OrderPage> {
   @override
   Widget build(BuildContext context) {
     loadData();
-
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: appbar("Order", () {
@@ -322,13 +321,16 @@ class _OrderPageState extends State<OrderPage> {
                                                           decimalDigits: 0)
                                                       .format(int.parse(
                                                           element["Price"]!)),
-                                                )),
+                                                )
+                                                ),
                                               ],
-                                            )),
+                                            )
+                                        ),
                                       )
                                       .toList(),
                             ),
-                          )),
+                          )
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -363,7 +365,7 @@ class _OrderPageState extends State<OrderPage> {
                                       style: TextStyle(
                                           fontSize: 22,
                                           fontWeight: FontWeight.bold),
-                                      colors: [Colors.greenAccent, Colors.grey],
+                                      colors: [Colors.greenAccent, Colors.greenAccent],
                                       "Accept",
                                     ))),
                             const SizedBox(
@@ -389,7 +391,7 @@ class _OrderPageState extends State<OrderPage> {
                                     style: TextStyle(
                                         fontSize: 22,
                                         fontWeight: FontWeight.bold),
-                                    colors: [Colors.redAccent, Colors.grey],
+                                    colors: [Colors.redAccent, Colors.redAccent],
                                   ),
                                 )),
                           ],

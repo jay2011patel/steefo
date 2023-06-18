@@ -256,45 +256,46 @@ class _AddItemPageState extends State<AddItemContent> {
                 // ),
                 LayoutBuilder(builder: (context, constraints) {
                   if (isEnabled == true) {
-                    return Column(
-                      children: [
-                        TextFormField(
-                          controller: newGrade,
-                          maxLines: 1,
-                          keyboardType: TextInputType.text,
-                          decoration: const InputDecoration(
-                            labelText: "Add new Grade",
-                            floatingLabelBehavior: FloatingLabelBehavior.never,
-                            border: OutlineInputBorder(
-                                // borderRadius: BorderRadius.circular(20),
-                                borderSide: BorderSide.none),
-                            filled: true,
-                            fillColor: Color.fromRGBO(233, 236, 239,
-                                0.792156862745098), //Color.fromRGBO(233, 236, 239, 0.792156862745098)
+                    return Container(
+                      child: Column(
+                        children: [
+                          TextFormField(
+                            controller: newGrade,
+                            maxLines: 1,
+                            keyboardType: TextInputType.text,
+                            decoration: const InputDecoration(
+                              labelText: "Add new Grade",
+                              floatingLabelBehavior: FloatingLabelBehavior.never,
+                              border: OutlineInputBorder(
+                                  // borderRadius: BorderRadius.circular(20),
+                                  borderSide: BorderSide.none),
+                              filled: true,
+                              fillColor: Color.fromRGBO(233, 236, 239,
+                                  0.792156862745098), //Color.fromRGBO(233, 236, 239, 0.792156862745098)
+                            ),
                           ),
-                        ),
-                        ElevatedButton(
+                          ElevatedButton(
+                              // icon: Icon(Icons.done_outlined),
+                              onPressed: () async {
+                                // print(newBasePrice.text);
+                                await http.post(
+                                    Uri.parse(
+                                        "http://urbanwebmobile.in/steffo/addgrade.php"),
+                                    body: {"gradeName":   newGrade.text,"gradePrice":newPrice.text});
+                                // Navigator.pop(context);
+                                Navigator.of(context).pushNamed("/AddItem");
 
-                            // icon: Icon(Icons.done_outlined),
-
-                            onPressed: () async {
-                              // print(newBasePrice.text);
-                              await http.post(
-                                  Uri.parse(
-                                      "http://urbanwebmobile.in/steffo/addgrade.php"),
-                                  body: {"gradeName": newGrade.text});
-                              Navigator.pop(context);
-
-                              // loadData();
-                              setState(() {
-                                isEnabled = false;
-                              });
-                            },
-                            child: Text("Submit"),
-                            style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.lightBlueAccent,
-                                foregroundColor: Colors.white))
-                      ],
+                                // loadData();
+                                setState(() {
+                                  isEnabled = true;
+                                });
+                              },
+                              child: Text("Submit"),
+                              style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.lightBlueAccent,
+                                  foregroundColor: Colors.white))
+                        ],
+                      ),
                     );
                   } else {
                     return ElevatedButton(
@@ -419,9 +420,11 @@ class _AddItemPageState extends State<AddItemContent> {
                                                         "price": newPrice.text
                                                       });
                                                 }
-                                                Navigator.pop(context);
+                                                // Navigator.pop(context);
+                                                Navigator.of(context).pushNamed("/AddItem");
                                               },
-                                              child: Text("Submit"))
+                                              child: Text("Submit")
+                                          )
                                         ],
                                       ),
                                     ),
@@ -438,7 +441,7 @@ class _AddItemPageState extends State<AddItemContent> {
                     return Column(
                       children: [
                         TextFormField(
-                          maxLines: 1,
+                          // maxLines: 1,
                           controller: newSize,
                           keyboardType: TextInputType.number,
                           decoration: const InputDecoration(
@@ -476,6 +479,7 @@ class _AddItemPageState extends State<AddItemContent> {
                                       "http://urbanwebmobile.in/steffo/addsize.php"),
                                   body: {"sizeName": newSize.text});
                               //  Navigator.pop(context);
+                              Navigator.of(context).pushNamed("/AddItem");
                               setState(() {
                                 isEnabled = false;
                               });
@@ -616,7 +620,8 @@ class _AddItemPageState extends State<AddItemContent> {
                                                                     .text
                                                           });
                                                     }
-                                                    Navigator.pop(context);
+                                                    // Navigator.pop(context);
+                                                    Navigator.of(context).pushNamed("/AddItem");
                                                   },
                                                   child: Text("Submit"))
                                             ],
@@ -658,7 +663,8 @@ class _AddItemPageState extends State<AddItemContent> {
                                       Uri.parse(
                                           "http://urbanwebmobile.in/steffo/addregion.php"),
                                       body: {"regionName": newRegion.text});
-                                  Navigator.pop(context);
+                                  // Navigator.pop(context);
+                                  Navigator.of(context).pushNamed("/AddItem");
                                   setState(() {
                                     isEnabled = false;
                                   });
